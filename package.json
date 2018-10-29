@@ -1,0 +1,9 @@
+{
+	"name": "RESAAS FE Technical Assessment",
+	"version": "1.0.0",
+	"description": "An open ended project focused on html, css and javascript",
+	"main": "index.html",
+	"dependencies": {
+		"http-server": "^0.11.1"
+	}
+}
