@@ -1,0 +1,38 @@
+<div class="container">
+
+  <!-- TODO: Componentize search form -->
+  <div class="row form-row">
+    <div class="col-12">
+      <div class="input-group mb-4 mt-4">
+        <input #filterInput
+          class="form-control"
+          type="text"
+          placeholder="Filter posts by keyword"
+          (keyup)="onFilterPosts(filterInput.value)">
+        <span class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" (click)="onFilterPosts(filterInput.value)"><i class="fas fa-search"></i></button>
+        </span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- TODO: Componentize and loop <app-user-posts>. Create `user-post` component possibly in shared/components directory -->
+  <div class="row posts-row">
+    <ng-container *ngFor="let post of userPosts">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-title">
+            <img src="https://via.placeholder.com/120">
+            <div>{{ post.userName }}</div>
+            <div>{{ post.userEmail }} | {{ post.userCity }}</div>
+          </div>
+          <div class="card-text">
+            <p><strong>{{ post.title }}</strong></p>
+            <div>{{ post.body }}</div>    
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+</div>
